@@ -1,9 +1,9 @@
 # Cancel Safe TX with refundReceiver
 
 ## ENV
-`SAFE` -- the safe you want to send the cancel tx to
-`ACCOUNT` -- the owner that will be creator for the cancel tx and the `refundReceiver` too
-`Pk` -- the `ACCOUNT`'s PK
+- `SAFE` -- the safe you want to send the cancel tx to
+- `ACCOUNT` -- the owner that will be creator for the cancel tx and the `refundReceiver` too
+- `Pk` -- the `ACCOUNT`'s PK
 
 ## How to use it?
 1. `yarn install`
