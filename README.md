@@ -8,9 +8,9 @@
 ## How to use it?
 1. `yarn install`
 2. add `.env` with proper values
-3. `NONCE=nnn npx ts-node ./index.ts` (`NONCE` must be the nonce for the tx you want to cancel)i
+3. `NONCE=nnn npx ts-node ./index.ts` (`NONCE` must be the nonce for the tx you want to cancel)
 
-### To send a trully cancel tx:
+### To send a real cancellation tx:
 ```bash
 # NONCE=nnn SEND_CANCEL=true npx ts-node ./index.ts
 ```
