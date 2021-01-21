@@ -72,6 +72,7 @@ const submit = async (safe, sender, privateKey) => {
   const txn = {
     ...baseTxn,
     safeTxGas,
+    value: 0,
     nonce: process.env.NONCE,
     baseGas: 600000,
     gasPrice,
