@@ -8,6 +8,8 @@ import { config } from 'dotenv'
 // env
 config()
 
+const ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
+
 const gnosisEstimateTransaction = async (safe: string, tx: any): Promise<any> => {
   console.log('estimate tx --', JSON.stringify(tx));
 
@@ -69,7 +71,7 @@ const submit = async (safe, sender, privateKey) => {
     baseTxn,
   );
 
-  const txn = {
+  const nonCancel = {
     ...baseTxn,
     safeTxGas,
     value: 0,
@@ -79,6 +81,17 @@ const submit = async (safe, sender, privateKey) => {
     gasToken: "0x0000000000000000000000000000000000000000",
     refundReceiver: process.env.ACCOUNT,
   };
+
+  const cancelTx = {
+    ...nonCancel,
+    safeTxGas: 0,
+    value: 0,
+    baseGas: 0,
+    gasPrice: 0,
+    refundReceiver: ZERO_ADDRESS,
+  }
+
+  const txn = process.env.SEND_CANCEL !== undefined ? cancelTx : nonCancel
 
   console.log({txn})
 
