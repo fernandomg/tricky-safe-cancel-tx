@@ -25,7 +25,7 @@ const { utils } = ethers;
 
 const gnosisProposeTx = async (safe: string, tx: any): Promise<any> => {
   try {
-    const resp = await axios.post(`https://safe-transaction.rinkeby.gnosis.io/api/v1/safes/${safe}/transactions/`, tx)
+    const resp = await axios.post(`https://safe-transaction.staging.gnosisdev.com/api/v1/safes/${safe}/transactions/`, tx)
     console.log('propose POST data --', resp.data)
     return resp.data
   } catch (e) {
