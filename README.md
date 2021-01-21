@@ -10,4 +10,9 @@
 2. add `.env` with proper values
 3. `NONCE=nnn npx ts-node ./index.ts` (`NONCE` must be the nonce for the tx you want to cancel)i
 
+### To send a trully cancel tx:
+```bash
+# NONCE=nnn SEND_CANCEL=true npx ts-node ./index.ts
+```
+
 Note: Code was copied and adapted from: https://gist.github.com/rmeissner/0fa5719dc6b306ba84ee34bebddc860b#file-safe_sig_gen_uport_eip712-ts
